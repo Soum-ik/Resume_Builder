@@ -8,7 +8,7 @@ const Hero = () => {
   useEffect(() => {
     const timeing = setInterval(() => {
       setMember(member + 1);
-    }, 5000);
+    }, 20000);
     return () => clearInterval(timeing);
   });
 
@@ -30,8 +30,8 @@ const Hero = () => {
 
           <Button text="Create you resume" width={"px-5"} />
 
-          <p className=" my-20">
-            {member}
+          <p className=" mt-10">
+            {member + "  "}
             resumes created today
           </p>
         </div>

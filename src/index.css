@@ -10,4 +10,12 @@
   .botton {
     @apply text-white bg-botton hover:bg-botton/90;
   }
+  .font_widthg{
+    @apply ss:max-w-[600px] sm:max-w-[700px] lg:max-w-[850px];
+  }
+  .font_size{
+    @apply text-[20px] xs:text-[30px] ss:text-[40px] sm:text-[50px] lg:text-[60px]
+  }
 }
+
+
