@@ -5,9 +5,14 @@ export default {
     extend: {
       colors: {
         bgPrimary: "#E2E8F0",
+        
         primary: "#4F46E5",
+        // like black
         secondary: "#0F172A",
+        // dark white
         dimWhite: "#475569",
+        // botton
+        botton: "#4338CA",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

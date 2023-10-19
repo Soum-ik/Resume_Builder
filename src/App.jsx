@@ -1,4 +1,8 @@
+import HomePage from "./components/pages/HomePage";
+
 const App = () => (
-    <h1 className=" text-center bg-bgPrimary ">Hello world</h1>
-)
-export default App
+  <div className=" w-full overflow-hidden ">
+    <HomePage />
+  </div>
+);
+export default App;
