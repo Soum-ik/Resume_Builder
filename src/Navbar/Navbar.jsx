@@ -1,12 +1,7 @@
-import { useState } from "react";
 import Logo from "../asset/logo.png";
-import Button from "./Button";
+import Button from "../components/Button";
 
 const Nav = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-  //   function handleChange() {
-  //     setIsOpen(!isOpen);
-  //   }
   return (
     <div className={` flex items-center justify-between w-full drop-shadow-lg`}>
       <img src={Logo} className=" w-[180px] -my-14 " alt="" />
@@ -20,7 +15,7 @@ const Nav = () => {
       </ul>
       {/* moblie part */}
       <div className=" sm:hidden flex  justify-end items-center">
-       <Button text="Sing Up"/>
+        <Button text="Sing Up" />
       </div>
     </div>
   );

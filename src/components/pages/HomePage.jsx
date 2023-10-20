@@ -1,9 +1,8 @@
 import styles from "../../style/Style";
-import Nav from "../Navbar";
+import Nav from "../../Navbar/Navbar";
 import Hero from "../Hero";
 import Jobs from "../Jobs";
 import Discreption from "../Discreption";
-
 
 const HomePage = () => {
   return (
@@ -17,7 +16,7 @@ const HomePage = () => {
         <div className={`${styles.boxWidth}`}>
           <Hero />
           <Jobs />
-          <Discreption/>
+          <Discreption />
         </div>
       </div>
     </>
