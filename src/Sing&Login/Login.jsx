@@ -11,7 +11,6 @@ const logIn = () => {
           <p className=" text-dimWhite text-[20px]">
             We are happy to see you back!
           </p>
-          <System icon={"Email"} name={"Email"} gap={"10"} />
           <System icon={"Google"} name={"Google"} gap={"10"} />
           <System icon={"Facebook"} name={"Facebook"} gap={"10"} />
 

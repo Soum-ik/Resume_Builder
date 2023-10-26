@@ -7,7 +7,7 @@ const App = () => (
   <div className=" w-full overflow-hidden ">
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/singUpPage" element={<SingUpPage />} />
+      <Route path="/singUppage" element={<SingUpPage />} />
       <Route path="/logInPage" element={<LogInPage />} />
     </Routes>
   </div>
