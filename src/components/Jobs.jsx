@@ -11,11 +11,11 @@ const Jobs = () => {
           Win your dream job
         </h1>
       </div>
-      <div className={`${styles.paddingY} grid grid-cols-1 sm:grid-cols-2 gap-4`}>
+      <div className={`${styles.paddingY} grid grid-cols-1 gap-4 sm:grid-cols-2`}>
         {Contants.map((Contant) => (
           <div
             key={Contant.id}
-            className={`${styles.flexCenter} ${styles.boxWidth} gap-6 m-6`}
+            className={`${styles.flexCenter} ${styles.boxWidth} gap-6 sm:m-6 m-3`}
           >
             <img className=" w-[30px] " src={Contant.Image} alt="" />
             <div className=" flex flex-1 flex-col flex-wrap">
