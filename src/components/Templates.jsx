@@ -16,19 +16,18 @@ const Template = () => {
           </h5>
         </div>
         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-10">
-          <Template_Img img={"Template_Img"}/>
-          <Template_Img img={""}/>
-          <Template_Img img={""}/>
-          <Template_Img img={""}/>
+          <Template_Img img={"Template_Img"} />
+          <Template_Img img={"Template_Img2"} />
+          <Template_Img img={"Template_Img3"} />
         </div>
         <div
           className={` rounded-xl ${styles.marginY} ${styles.marginX} bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500`}
         >
           <div className={`${styles.flexCenter} ${styles.padding}`}>
             <h1
-              className={`${styles.heading2} text-white max-w-[800px] text-[20px] sm:text-[30px] text-center`}
+              className={`${styles.heading2} text-white md:max-w-[800px] text-[16px] max-w-sm leading-[20px] sm:text-[30px] text-center`}
             >
-              Boost your career.{" "}
+              Boost your career. <br />
               <span className=" text-secondary/70 font-bold ">
                 {" "}
                 Start using Hello_Builder today

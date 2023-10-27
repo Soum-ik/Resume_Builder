@@ -1,0 +1,58 @@
+[1mdiff --git a/src/components/Template.jsx b/src/components/Template.jsx[m
+[1mindex 84d1784..52d535c 100644[m
+[1m--- a/src/components/Template.jsx[m
+[1m+++ b/src/components/Template.jsx[m
+[36m@@ -7,11 +7,22 @@[m [mconst Template = ({ img }) => {[m
+   return ([m
+     <div className=" relative group">[m
+       {img === "Template_Img" ? ([m
+[31m-        <img src={Template_Img} />[m
+[32m+[m[32m        <img[m
+[32m+[m[32m          className="aspect-square h-fit  group-hover:blur-[2px] rounded-md"[m
+[32m+[m[32m          src={Template_Img}[m
+[32m+[m[32m        />[m
+[32m+[m[32m      ) : img === "Template_Img2" ? ([m
+[32m+[m[32m        <img[m
+[32m+[m[32m          src={Template_Img2}[m
+[32m+[m[32m          className="aspect-square h-fit group-hover:blur-[2px] rounded-md"[m
+[32m+[m[32m        />[m
+       ) : ([m
+[31m-        <img src={Template_Img2} />[m
+[31m-      )  }[m
+[31m-      <Button style={true} text={"Use the Templet"} />[m
+[32m+[m[32m        <img[m
+[32m+[m[32m          src={Template_Img3}[m
+[32m+[m[32m          className="aspect-square h-fit group-hover:blur-[2px] rounded-md"[m
+[32m+[m[32m        />[m
+[32m+[m[32m      )}[m
+[32m+[m[32m      <Button width={"p-12"} style={true} text={"Use the Template"} />[m
+     </div>[m
+   );[m
+ };[m
+[1mdiff --git a/src/components/Templates.jsx b/src/components/Templates.jsx[m
+[1mindex ecc19fb..339bee4 100644[m
+[1m--- a/src/components/Templates.jsx[m
+[1m+++ b/src/components/Templates.jsx[m
+[36m@@ -5,8 +5,8 @@[m [mimport Footer from "./Footer";[m
+ const Template = () => {[m
+   return ([m
+     <div className={`${styles.marginX}`}>[m
+[31m-      <div className={` ${styles.boxWidth} md:${styles.paddingY}`}>[m
+[31m-        <div className=" space-y-4">[m
+[32m+[m[32m      <div className={` ${styles.boxWidth} ${styles.paddingY}`}>[m
+[32m+[m[32m        <div className=" space-y-2">[m
+           <h4 className="text-primary font-medium ">RESUME TEMPLATES</h4>[m
+           <h2 className=" text-[40px] text-secondary font-bold leading-[3rem]">[m
+             Select your job-winning resume template[m
+[36m@@ -17,9 +17,8 @@[m [mconst Template = () => {[m
+         </div>[m
+         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-10">[m
+           <Template_Img img={"Template_Img"}/>[m
+[31m-          <Template_Img img={""}/>[m
+[31m-          <Template_Img img={""}/>[m
+[31m-          <Template_Img img={""}/>[m
+[32m+[m[32m          <Template_Img img={"Template_Img2"}/>[m
+[32m+[m[32m          <Template_Img img={"Template_Img3"}/>[m
+         </div>[m
+         <div[m
+           className={` rounded-xl ${styles.marginY} ${styles.marginX} bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500`}[m

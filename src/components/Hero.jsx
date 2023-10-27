@@ -29,7 +29,7 @@ const Hero = () => {
           </p>
 
           <Button
-            page="/templatesPage"
+            page={"/templatesPage"}
             text="Create you resume"
             width={"px-5"}
           />
