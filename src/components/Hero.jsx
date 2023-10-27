@@ -28,7 +28,11 @@ const Hero = () => {
             Create your professional resume in 5 minutes.
           </p>
 
-          <Button text="Create you resume" width={"px-5"} />
+          <Button
+            page="/templatesPage"
+            text="Create you resume"
+            width={"px-5"}
+          />
 
           <p className=" mt-10 flex items-center justify-center">
             <div className=" rounded-full animate-pulse w-2 h-2 bg-green-500 pl-2 "></div>

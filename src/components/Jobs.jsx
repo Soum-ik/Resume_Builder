@@ -1,4 +1,4 @@
-import styles, { layout } from "../style/Style";
+import styles from "../style/Style";
 import { Contants } from "../Contants/contant";
 const Jobs = () => {
   return (

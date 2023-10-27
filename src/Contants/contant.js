@@ -44,3 +44,9 @@ export const Motivations =
 
 // last option
 export const heading3 = "Ready to dive in?Create your resume today.";
+
+// main page
+
+//  RESUME TEMPLATES
+// Select your job-winning resume template
+// Create your resume in 5 minutes.
