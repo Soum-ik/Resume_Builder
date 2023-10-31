@@ -1,5 +1,7 @@
-import HomePage from "./components/pages/HomePage";
 import { Routes, Route } from "react-router-dom";
+
+// all pages
+import HomePage from "./components/pages/HomePage";
 import SingUpPage from "./components/pages/SingUpPage";
 import LogInPage from "./components/pages/LogInPage";
 import TemplatePage from "./components/pages/Templetspage";
@@ -12,8 +14,9 @@ const App = () => (
       <Route path="/singUppage" element={<SingUpPage />} />
       <Route path="/logInPage" element={<LogInPage />} />
       <Route path="/templatesPage" element={<TemplatePage />} />
-      <Route path="/createResumePage" element={<Create_ResumePage />} />
+      <Route path="/createResumePage" element={<Total_form />} />
     </Routes>
+    {/* <Test /> */}
   </div>
 );
 export default App;
