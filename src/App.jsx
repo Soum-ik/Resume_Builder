@@ -14,7 +14,7 @@ const App = () => (
       <Route path="/singUppage" element={<SingUpPage />} />
       <Route path="/logInPage" element={<LogInPage />} />
       <Route path="/templatesPage" element={<TemplatePage />} />
-      <Route path="/createResumePage" element={<Total_form />} />
+      <Route path="/createResumePage" element={<Create_ResumePage />} />
     </Routes>
     {/* <Test /> */}
   </div>

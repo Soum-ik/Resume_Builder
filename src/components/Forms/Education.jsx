@@ -1,42 +1,41 @@
 import { TextField } from "@mui/material";
-// import { TextareaAutosize as Textarea } from "@mui/base/TextareaAutosize";
 
-const Working_Exp = () => {
+const Education = () => {
   return (
     <form
       onChange={(e) => e.preventDefault()}
       className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-10"
     >
       <div className="">
-        <TextField fullWidth={true} required label="Job Tittle" />
+        <TextField fullWidth={true} required label="Collage name" />
       </div>
       <div className="">
-        <TextField fullWidth={true} type="text" required label="Job Details" />
+        <TextField fullWidth={true} label="School name" />
       </div>
-      {/* <dd> */}
       <div className="">
+        <TextField fullWidth={true} type="text" label="Degree" />
+      </div>
+      <div className="">
+        <TextField fullWidth={true} type="text" label="Degree" />
+      </div>
+      <div className="grid grid-cols-2 gap-10">
         <TextField
-          fullWidth={true}
-          required
           type="date"
+          fullWidth={false}
           InputLabelProps={{
             shrink: true,
           }}
-          label="Start Date"
+          label="Graduation Start Date"
         />
-      </div>
-      <div className="">
         <TextField
-          fullWidth={true}
-          required
           type="date"
           InputLabelProps={{
             shrink: true,
           }}
-          label="End Date"
+          label="Graduation end Date"
         />
       </div>
     </form>
   );
 };
-export default Working_Exp;
+export default Education;

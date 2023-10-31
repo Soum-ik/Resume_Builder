@@ -1,40 +1,15 @@
-import { TextField } from "@mui/material";
+// import { TextareaAutosize as Textarea } from "@mui/material";
+import styles from "../../style/Style";
 
-const Working_Exp = () => {
+const Summary = () => {
   return (
-    <form
-      onChange={(e) => e.preventDefault()}
-      className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-10"
-    >
-      <div className="">
-        <TextField fullWidth={true} required label="Job Tittle" />
-      </div>
-      <div className="">
-        <TextField fullWidth={true} type="text" required label="Job Details" />
-      </div>
-      <div className="">
-        <TextField
-          fullWidth={true}
-          required
-          type="date"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          label="Start Date"
-        />
-      </div>
-      <div className="">
-        <TextField
-          fullWidth={true}
-          required
-          type="date"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          label="End Date"
-        />
-      </div>
-    </form>
+    <div className={`${styles.paddingX} ${styles.flexCenter} sm:min-w-[500px]`}>
+      <textarea
+        type="text"
+        className=" border-dimWhite/70  rounded-lg text-[20px] w-full px-4 py-5  border focus:border-none"
+        
+      />
+    </div>
   );
 };
-export default Working_Exp;
+export default Summary;
