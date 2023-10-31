@@ -5,6 +5,7 @@ import { BiPlusMedical } from "react-icons/bi";
 const InputLabel = ({ label }) => {
   const [skills, setSkills] = useState([""]);
 
+  // console.log(skills);
   const handleAddSkill = () => {
     setSkills([...skills, ""]);
   };
