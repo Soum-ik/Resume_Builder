@@ -30,7 +30,12 @@ const InputLabel = ({ label }) => {
         </>
       ))}
       <div>
-        <Button variant="text" color="primary" onClick={handleAddSkill}>
+        <Button
+          className=" text-center"
+          variant="text"
+          color="primary"
+          onClick={handleAddSkill}
+        >
           <BiPlusMedical />
           {"  "} add more {label}
         </Button>
