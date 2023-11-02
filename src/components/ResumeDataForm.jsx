@@ -9,7 +9,6 @@ import styles from "../style/Style";
 import Personal_Info_Formes from "./Forms/Personal_InfoFrom";
 import Working_Exp from "./Forms/Work_Exper";
 import Summary from "./Forms/Summary";
-import { useEffect, useRef } from "react";
 import Education from "./Forms/Education";
 import InputLabel from "./Forms/InputLable";
 import Project from "./Forms/Projects";
@@ -41,19 +40,46 @@ export default function TabsWrappedLabel() {
             <Tab
               icon={<BsPersonCircle />}
               label="Personal Details"
-              value="one" iconPosition="end"
+              value="one"
+              iconPosition="end"
             />
-            <Tab icon={<GrUserExpert/>} label="Working Experince" value="2" iconPosition="end"/>
-            <Tab icon={<MdSummarize/>} label="summary" value="3"  iconPosition="end"/>
-            <Tab icon={<FaLanguage />} label="language" value="6"  iconPosition="end"/>
-            <Tab icon={<MdCastForEducation />} label="EDUCATION" value="4"  iconPosition="end"/>
-            <Tab icon={<GiSkills />} label="skills" value="5"  iconPosition="end"/>
+            <Tab
+              icon={<GrUserExpert />}
+              label="Working Experince"
+              value="2"
+              iconPosition="end"
+            />
+            <Tab
+              icon={<MdSummarize />}
+              label="summary"
+              value="3"
+              iconPosition="end"
+            />
+            <Tab
+              icon={<FaLanguage />}
+              label="language"
+              value="6"
+              iconPosition="end"
+            />
+            <Tab
+              icon={<MdCastForEducation />}
+              label="EDUCATION"
+              value="4"
+              iconPosition="end"
+            />
+            <Tab
+              icon={<GiSkills />}
+              label="skills"
+              value="5"
+              iconPosition="end"
+            />
             <Tab
               icon={<AiOutlineFundProjectionScreen />}
               label="project"
-              value="7" iconPosition="end"
+              value="7"
+              iconPosition="end"
             />
-            {/* <Tab label="summary" value="6" /> */}
+            
           </TabList>
         </Box>
         <TabPanel autoFocus value="one">

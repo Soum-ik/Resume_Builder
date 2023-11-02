@@ -1,5 +1,5 @@
 import styles from "../style/Style";
-import Template_Img from "./Template";
+import Template_Img from "./TemplateImage";
 import Footer from "./Footer";
 
 const Template = () => {

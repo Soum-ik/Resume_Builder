@@ -1,9 +1,12 @@
 import { TextField } from "@mui/material";
 
 const Education = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <form
-      onChange={(e) => e.preventDefault()}
+      onSubmit={(e) => handleSubmit(e)}
       className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-10"
     >
       <div className="">
@@ -35,6 +38,13 @@ const Education = () => {
           label="Graduation end Date"
         />
       </div>
+      <button
+        type="submit"
+        className=" max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
+      "
+      >
+        Submit
+      </button>
     </form>
   );
 };

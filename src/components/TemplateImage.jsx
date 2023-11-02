@@ -1,6 +1,5 @@
 import Template_Img from "../asset/resume.jpg";
 import Template_Img2 from "../asset/resume6.webp";
-// import Template_Img3 from "../asset/resume3.jpg";
 import Template_Img3 from "../asset/resume5.jpg";
 import Button from "./Button";
 
@@ -20,7 +19,7 @@ const Template = ({ img }) => {
       ) : (
         <img
           src={Template_Img3}
-          className="aspect-square object-cover h-fit group-hover:blur-[2px] rounded-md"
+          className="aspect-square object-cover  h-fit group-hover:blur-[2px] rounded-md"
         />
       )}
       <Button

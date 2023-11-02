@@ -6,7 +6,7 @@ import Button from "../components/Button";
 import Footer from "./Footer";
 
 const Discreption = () => {
-  const [short, setShort] = useState(false);
+  // const [short, setShort] = useState(false);
   return (
     <div className={` ${styles.boxWidth}`}>
       <div className={`${layout.section} gap-10`}>

@@ -5,7 +5,6 @@ import { BiPlusMedical } from "react-icons/bi";
 const InputLabel = ({ label }) => {
   const [skills, setSkills] = useState([""]);
 
-  // console.log(skills);
   const handleAddSkill = () => {
     setSkills([...skills, ""]);
   };
@@ -16,23 +15,26 @@ const InputLabel = ({ label }) => {
     setSkills(updatedSkills);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevents the form from reloading
+    // Handle form submission logic here
+  };
+
   return (
-    <form action="" className="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <form onSubmit={(e) => handleSubmit(e)} className="grid grid-cols-1 md:grid-cols-2 gap-10">
       {skills.map((skill, index) => (
-        <>
-          <div key={index}>
-            <TextField
-              fullWidth
-              label={label}
-              value={skill}
-              onChange={(e) => handleSkillChange(index, e.target.value)}
-            />
-          </div>
-        </>
+        <div key={index}>
+          <TextField
+            fullWidth
+            label={label}
+            value={skill}
+            onChange={(e) => handleSkillChange(index, e.target.value)}
+          />
+        </div>
       ))}
       <div>
         <Button
-          className=" text-center"
+          className="text-center"
           variant="text"
           color="primary"
           onClick={handleAddSkill}
@@ -41,6 +43,12 @@ const InputLabel = ({ label }) => {
           {"  "} add more {label}
         </Button>
       </div>
+      <button
+        type="submit"
+        className="max-w-xs border py-2 px-3 rounded-md bg-primary hover:bg-primary/90 text-white"
+      >
+        Submit
+      </button>
     </form>
   );
 };

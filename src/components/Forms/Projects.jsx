@@ -1,8 +1,14 @@
 import { TextField } from "@mui/material";
 
 const Project = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <form className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+    <form
+      onSubmit={(e) => handleSubmit(e)}
+      className="grid grid-cols-1 sm:grid-cols-3 gap-8"
+    >
       <div className="">
         <TextField fullWidth={true} label="Project Name" />
       </div>
@@ -16,8 +22,20 @@ const Project = () => {
         <TextField fullWidth={true} type="url" label="Live link" />
       </div>
       <div>
-        <TextField className=" " fullWidth={true} type="url" label="GitHub link" />
+        <TextField
+          className=" "
+          fullWidth={true}
+          type="url"
+          label="GitHub link"
+        />
       </div>
+      <button
+        type="submit"
+        className=" max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
+      "
+      >
+        Submit
+      </button>
     </form>
   );
 };
