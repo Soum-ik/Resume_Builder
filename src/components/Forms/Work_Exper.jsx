@@ -1,7 +1,22 @@
 import { TextField } from "@mui/material";
-// import { TextareaAutosize as Textarea } from "@mui/base/TextareaAutosize";
+import { useState } from "react";
 
 const Working_Exp = () => {
+  const [work_Expe, setWork_Expe] = useState({
+    company: "",
+    jobRole: "",
+    jobDetails: "",
+    startDate: "",
+    endDate: "",
+  });
+  console.log(work_Expe);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setWork_Expe({
+      ...work_Expe,
+      [name]: value,
+    });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -11,19 +26,39 @@ const Working_Exp = () => {
       className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-10"
     >
       <div className="">
-        <TextField fullWidth={true} required label="Company" />
+        <TextField
+          fullWidth={true}
+          name="company"
+          required
+          label="Company"
+          onChange={handleInputChange}
+        />
       </div>
       <div className="">
-        <TextField fullWidth={true} required label="Job Role" />
+        <TextField
+          fullWidth={true}
+          name="jobRole"
+          required
+          label="Job Role"
+          onChange={handleInputChange}
+        />
       </div>
       <div className="">
-        <TextField fullWidth={true} type="text" required label="Job Details" />
+        <TextField
+          fullWidth={true}
+          type="text"
+          required
+          name="jobDetails"
+          label="Job Details"
+          onChange={handleInputChange}
+        />
       </div>
       {/* <dd> */}
       <div className="">
         <TextField
+          name="startDate"
           fullWidth={true}
-          required
+          requiredonChange={handleInputChange}
           type="date"
           InputLabelProps={{
             shrink: true,
@@ -33,9 +68,11 @@ const Working_Exp = () => {
       </div>
       <div className="">
         <TextField
+          name="endDate"
           fullWidth={true}
           required
           type="date"
+          onChange={handleInputChange}
           InputLabelProps={{
             shrink: true,
           }}

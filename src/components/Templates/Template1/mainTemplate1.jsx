@@ -9,7 +9,6 @@ const Template1 = () => {
     <div className={`${styles.paddingX}`}>
       <Nav />
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-
         {/* <button>Download</button> */}
         <div className={`${styles.boxWidth} ${styles.marginY}`}>
           <h1 className={`${styles.heading2}  text-center uppercase`}>

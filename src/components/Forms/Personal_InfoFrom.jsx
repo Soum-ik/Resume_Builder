@@ -1,6 +1,27 @@
 import { TextField } from "@mui/material";
+import { useState } from "react";
 
 const Personal_Info_Formes = () => {
+  const [personalInfo, setPersonalInfo] = useState({
+    name: "",
+    email: "",
+    number: "",
+    github: "",
+    twitter: "",
+    facebook: "",
+    linkdin: "",
+    // :"",
+  });
+
+  const handleInputChange = (e) => {
+    console.log(personalInfo);
+    const { name, value } = e.target;
+    setPersonalInfo({
+      ...personalInfo,
+      [name]: value,
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -12,16 +33,30 @@ const Personal_Info_Formes = () => {
         className=" grid grid-cols-1 grid-flow-row-dense md:grid-cols-2 gap-10"
       >
         <div className="">
-          <TextField fullWidth={true} required label="Enter Your Name " />
+          <TextField
+            fullWidth={true}
+            required
+            name="name"
+            label="Enter Your Name "
+            onChange={handleInputChange}
+          />
         </div>
         <div className="">
-          <TextField fullWidth={true} required label="Enter Your Email" />
+          <TextField
+            fullWidth={true}
+            required
+            name="email"
+            onChange={handleInputChange}
+            label="Enter Your Email"
+          />
         </div>
 
         <div>
           <TextField
+            name="number"
             fullWidth={true}
             label="Number"
+            onChange={handleInputChange}
             type="number"
             InputLabelProps={{
               shrink: true,
@@ -29,19 +64,38 @@ const Personal_Info_Formes = () => {
           />
         </div>
         <div className="">
-          <TextField fullWidth={true} type="url" label="GitHub" />
+          <TextField
+            name="github"
+            fullWidth={true}
+            type="url"
+            label="GitHub"
+            onChange={handleInputChange}
+          />
         </div>
         <div className="">
-          <TextField fullWidth={true} label="Twitter" />
+          <TextField
+            name="twitter"
+            fullWidth={true}
+            label="Twitter"
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className="">
+          <TextField
+            name="facebook"
+            fullWidth={true}
+            label="Facebook"
+            onChange={handleInputChange}
+          />
         </div>
         <div className="">
-          <TextField fullWidth={true} type="url" label="Instragram" />
-        </div>
-        <div className="">
-          <TextField fullWidth={true} label="Facebook" />
-        </div>
-        <div className="">
-          <TextField fullWidth={true} label="Linkdin" />
+          <TextField
+            name="linkdin"
+            fullWidth={true}
+            label="Linkdin"
+            onChange={handleInputChange}
+          />
         </div>
         <button
           type="submit"

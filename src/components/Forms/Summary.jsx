@@ -5,6 +5,10 @@ import styles from "../../style/Style";
 const Summary = () => {
   const [summary, setSummary] = useState("");
 
+  const handleInputChange = (e) => {
+    setSummary(e.target.value);
+  };
+  console.log(summary);
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevents the form from reloading
     // Handle form submission logic here
@@ -12,10 +16,12 @@ const Summary = () => {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      <div className={`${styles.paddingX} ${styles.flexCenter} sm:min-w-[500px]`}>
+      <div
+        className={`${styles.paddingX} ${styles.flexCenter} sm:min-w-[500px]`}
+      >
         <textarea
           value={summary}
-          onChange={(e) => setSummary(e.target.value)}
+          onChange={(e) => handleInputChange(e)}
           placeholder="Write something about you?"
           type="text"
           className="border-dimWhite/70 text-secondary/75 rounded-lg text-[18px] w-full px-4 py-5 border focus:border-none"
