@@ -1,9 +1,6 @@
 import { TextField } from "@mui/material";
-// import { useEffect  , useRef } from "react";
-import { useState } from "react";
 
 const Personal_Info_Formes = () => {
-  // const [name, setName] = useState("name");
   const handleSubmit = (e) => {
     e.preventDefault();
   };

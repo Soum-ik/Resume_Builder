@@ -1,6 +1,11 @@
 import { TextField } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Project = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/Resume");
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -30,6 +35,7 @@ const Project = () => {
         />
       </div>
       <button
+        onClick={handleClick}
         type="submit"
         className=" max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
       "

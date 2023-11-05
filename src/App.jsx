@@ -8,6 +8,8 @@ import TemplatePage from "./components/pages/Templetspage";
 import Create_ResumePage from "./components/pages/Create-ResumePage";
 import Template1 from "./components/Templates/Template1/mainTemplate1";
 // Template1
+
+
 const App = () => (
   <div className=" w-full overflow-hidden ">
     <Routes>
@@ -18,7 +20,6 @@ const App = () => (
       <Route path="/createResumePage" element={<Create_ResumePage />} />
       <Route path="/Resume" element={<Template1 />} />
     </Routes>
-    {/* <Test /> */}
   </div>
 );
 export default App;
