@@ -1,4 +1,5 @@
 import { TextField } from "@mui/material";
+import { useEffect } from "react";
 import { useState } from "react";
 
 const Personal_Info_Formes = () => {
@@ -22,6 +23,10 @@ const Personal_Info_Formes = () => {
     });
   };
 
+  useEffect(() => {
+      
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -38,7 +43,7 @@ const Personal_Info_Formes = () => {
             required
             name="name"
             label="Enter Your Name "
-            onChange={handleInputChange}
+            onSubmit={handleInputChange}
           />
         </div>
         <div className="">
@@ -99,7 +104,7 @@ const Personal_Info_Formes = () => {
         </div>
         <button
           type="submit"
-          className=" max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
+          className=" text-[21px] focus:m-[1px] focus:max-w-[320px] max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
       "
         >
           Submit

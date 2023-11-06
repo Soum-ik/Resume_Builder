@@ -78,12 +78,12 @@ const Education = () => {
         />
       </div>
       <button
-        type="submit"
-        className=" max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
+          type="submit"
+          className=" text-[21px] focus:m-[1px] focus:max-w-[320px] max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
       "
-      >
-        Submit
-      </button>
+        >
+          Submit
+        </button>
     </form>
   );
 };

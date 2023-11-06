@@ -5,6 +5,7 @@ import { BiPlusMedical } from "react-icons/bi";
 const InputLabel = ({ label }) => {
   const [skills, setSkills] = useState([""]);
 
+
   const handleAddSkill = () => {
     setSkills([...skills, ""]);
   };
@@ -21,7 +22,10 @@ const InputLabel = ({ label }) => {
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)} className="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <form
+      onSubmit={(e) => handleSubmit(e)}
+      className="grid grid-cols-1 md:grid-cols-2 gap-10"
+    >
       {skills.map((skill, index) => (
         <div key={index}>
           <TextField
@@ -45,7 +49,8 @@ const InputLabel = ({ label }) => {
       </div>
       <button
         type="submit"
-        className="max-w-xs border py-2 px-3 rounded-md bg-primary hover:bg-primary/90 text-white"
+        className=" text-[21px] focus:m-[1px] focus:max-w-[320px] max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
+      "
       >
         Submit
       </button>
