@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-
+console.log("count");
 // all pages
 import HomePage from "./components/pages/HomePage";
 import SingUpPage from "./components/pages/SingUpPage";

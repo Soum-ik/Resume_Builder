@@ -1,18 +1,33 @@
 import { TextField } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const getData = () => {
+  let personalInfo = localStorage.getItem("education");
+  if (personalInfo) {
+    return JSON.parse(localStorage.getItem("education"));
+  } else {
+    return [];
+  }
+};
 
 const Education = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-  const [education, setEducation] = useState({
-    collage: "",
-    school: "",
-    degree: "",
-    // : "",
-    startdate: "",
-    enddate: "",
-  });
+  const [education, setEducation] = useState(
+    {
+      collage: "",
+      school: "",
+      degree: "",
+      // : "",
+      startdate: "",
+      enddate: "",
+    } && getData()
+  );
+
+  useEffect(() => {
+    localStorage.setItem("education", JSON.stringify(education));
+  }, [education]);
 
   const handleInputChange = (e) => {
     console.log(education);
@@ -78,12 +93,12 @@ const Education = () => {
         />
       </div>
       <button
-          type="submit"
-          className=" text-[21px] focus:m-[1px] focus:max-w-[320px] max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
+        type="submit"
+        className=" text-[21px] focus:m-[1px] focus:max-w-[320px] max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
       "
-        >
-          Submit
-        </button>
+      >
+        Submit
+      </button>
     </form>
   );
 };

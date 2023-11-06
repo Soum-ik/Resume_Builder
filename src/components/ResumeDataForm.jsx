@@ -79,7 +79,6 @@ export default function TabsWrappedLabel() {
               value="7"
               iconPosition="end"
             />
-            
           </TabList>
         </Box>
         <TabPanel autoFocus value="one">

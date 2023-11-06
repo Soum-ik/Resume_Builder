@@ -1,16 +1,30 @@
 import { TextField } from "@mui/material";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Project = () => {
-  const [project, setProject] = useState({
-    name: "",
-    details: "",
-    technology: "",
-    git: "",
-    live: "",
-  });
+const getData = () => {
+  let project = localStorage.getItem("project");
+  if (project) {
+    return JSON.parse(localStorage.getItem("project"));
+  } else {
+    return [];
+  }
+};
 
+const Project = () => {
+  const [project, setProject] = useState(
+    {
+      name: "",
+      details: "",
+      technology: "",
+      git: "",
+      live: "",
+    } && getData()
+  );
+
+  useEffect(() => {
+    localStorage.setItem("project", JSON.stringify(project));
+  }, [project]);
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/Resume");
@@ -21,8 +35,8 @@ const Project = () => {
   const handleInputChange = (e) => {
     // console.log(personalInfo);
     const { name, value } = e.target;
-    setPersonalInfo({
-      ...personalInfo,
+    setProject({
+      ...project,
       [name]: value,
     });
   };

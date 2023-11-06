@@ -18,6 +18,8 @@ const Summary = () => {
 
   useEffect(() => {
     localStorage.setItem("summary", JSON.stringify(summary));
+
+    return localStorage.setItem("summary", JSON.stringify(summary));
   }, [summary]);
 
   const handleInputChange = (e) => {

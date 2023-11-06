@@ -1,18 +1,33 @@
 import { TextField } from "@mui/material";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+// import { useState } from "react";
+
+const getData = () => {
+  let personalInfo = localStorage.getItem("personalInfo");
+  if (personalInfo) {
+    return JSON.parse(localStorage.getItem("personalInfo"));
+  } else {
+    return [];
+  }
+};
 
 const Personal_Info_Formes = () => {
-  const [personalInfo, setPersonalInfo] = useState({
-    name: "",
-    email: "",
-    number: "",
-    github: "",
-    twitter: "",
-    facebook: "",
-    linkdin: "",
-    // :"",
-  });
+  const [personalInfo, setPersonalInfo] = useState(
+    {
+      name: "",
+      email: "",
+      number: "",
+      github: "",
+      twitter: "",
+      facebook: "",
+      linkdin: "",
+    } && getData()
+  );
+
+  // Save data to localStorage whenever personalInfo changes
+  useEffect(() => {
+    localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
+  }, [personalInfo]);
 
   const handleInputChange = (e) => {
     console.log(personalInfo);
@@ -22,10 +37,6 @@ const Personal_Info_Formes = () => {
       [name]: value,
     });
   };
-
-  useEffect(() => {
-      
-  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,13 +48,13 @@ const Personal_Info_Formes = () => {
         onSubmit={(e) => handleSubmit(e)}
         className=" grid grid-cols-1 grid-flow-row-dense md:grid-cols-2 gap-10"
       >
-        <div className="">
+        <div>
           <TextField
             fullWidth={true}
             required
             name="name"
-            label="Enter Your Name "
-            onSubmit={handleInputChange}
+            onChange={handleInputChange}
+            label="Enter Your Name"
           />
         </div>
         <div className="">

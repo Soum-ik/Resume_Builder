@@ -4,6 +4,10 @@ import Projects from "./project";
 import Details from "./details";
 import Working from "./working";
 
+// let get = localStorage.getItem("summary");
+let data = JSON.parse(localStorage.getItem("summary"));
+console.log(data);
+
 const Template1 = () => {
   return (
     <div className={`${styles.paddingX}`}>
@@ -61,11 +65,12 @@ const Template1 = () => {
             <div className="text-left">
               <Details
                 name={"summary"}
-                summary={`Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Perferendis non dicta, aliquam corporis recusandae deserunt
-                    quaerat nesciunt reprehenderit voluptatem dolorem odio
-                    repellat earum excepturi expedita totam itaque, explicabo
-                    delectus quam!`}
+                summary={data}
+                // summary={`Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                //     Perferendis non dicta, aliquam corporis recusandae deserunt
+                //     quaerat nesciunt reprehenderit voluptatem dolorem odio
+                //     repellat earum excepturi expedita totam itaque, explicabo
+                //     delectus quam!`}
               />
 
               <div className=" pt-5 pb-5">
