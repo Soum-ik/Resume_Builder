@@ -1,15 +1,29 @@
 import { TextField } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const work_Expe = () => {
+  let work_Expe = localStorage.getItem("work_Expe");
+  if (work_Expe) {
+    return JSON.parse(localStorage.getItem("work_Expe"));
+  } else {
+    return [];
+  }
+};
+
+export const work_ExpeData = work_Expe();
 
 const Working_Exp = () => {
-  const [work_Expe, setWork_Expe] = useState({
-    company: "",
-    jobRole: "",
-    jobDetails: "",
-    startDate: "",
-    endDate: "",
-  });
-  console.log(work_Expe);
+  const [work_Expe, setWork_Expe] = useState(
+    {
+      company: "",
+      jobRole: "",
+      jobDetails: "",
+      startDate: "",
+      endDate: "",
+    } && work_ExpeData
+  );
+  // const [loading, setLoading] = useState(false);
+  // console.log(work_Expe);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setWork_Expe({
@@ -17,6 +31,11 @@ const Working_Exp = () => {
       [name]: value,
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem("work_Expe", JSON.stringify(work_Expe));
+  }, [work_Expe]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -49,6 +68,7 @@ const Working_Exp = () => {
           type="text"
           required
           name="jobDetails"
+          // maxRows={3}
           label="Job Details"
           onChange={handleInputChange}
         />
@@ -58,8 +78,9 @@ const Working_Exp = () => {
         <TextField
           name="startDate"
           fullWidth={true}
-          requiredonChange={handleInputChange}
+          required
           type="date"
+          onChange={handleInputChange}
           InputLabelProps={{
             shrink: true,
           }}
@@ -79,13 +100,15 @@ const Working_Exp = () => {
           label="End Date"
         />
       </div>
-      <button
-        type="submit"
-        className=" max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
+      {
+        <button
+          type="submit"
+          className=" max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
       "
-      >
-        Submit
-      </button>
+        >
+          Submit
+        </button>
+      }
     </form>
   );
 };

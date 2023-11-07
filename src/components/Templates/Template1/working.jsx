@@ -10,7 +10,7 @@ const Working = ({ Name, dic, tech, git, live, subName, start, end }) => {
           {start} - {end}
         </p>
       </div>
-      <p className=" text-[14px] ">{dic}</p>
+      <p className=" text-[14px]">{dic}</p>
     </div>
   );
 };

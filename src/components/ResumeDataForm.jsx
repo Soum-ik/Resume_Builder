@@ -35,13 +35,14 @@ export default function TabsWrappedLabel() {
             onChange={handleChange}
             aria-label="lab API tabs example"
             variant="scrollable"
-            // ScrollButtonComponent={true}
+            
           >
             <Tab
               icon={<BsPersonCircle />}
               label="Personal Details"
               value="one"
               iconPosition="end"
+              // onSubmit={}
             />
             <Tab
               icon={<GrUserExpert />}

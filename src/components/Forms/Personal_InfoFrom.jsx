@@ -1,7 +1,8 @@
 import { TextField } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 // import { useState } from "react";
 
+// fetch from local storage
 const getData = () => {
   let personalInfo = localStorage.getItem("personalInfo");
   if (personalInfo) {
@@ -25,7 +26,8 @@ const Personal_Info_Formes = () => {
   );
 
   // Save data to localStorage whenever personalInfo changes
-  useEffect(() => {
+
+  const handleClick = useCallback(() => {
     localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
   }, [personalInfo]);
 
@@ -38,6 +40,7 @@ const Personal_Info_Formes = () => {
     });
   };
 
+  // stop auto reload
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -74,6 +77,8 @@ const Personal_Info_Formes = () => {
             label="Number"
             onChange={handleInputChange}
             type="number"
+            // value={}
+            // itemType=""
             InputLabelProps={{
               shrink: true,
             }}
@@ -115,6 +120,7 @@ const Personal_Info_Formes = () => {
         </div>
         <button
           type="submit"
+          onClick={handleClick}
           className=" text-[21px] focus:m-[1px] focus:max-w-[320px] max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
       "
         >
