@@ -1,5 +1,5 @@
 import { TextField } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 const getData = () => {
@@ -12,6 +12,7 @@ const getData = () => {
 };
 
 const Project = () => {
+  
   const [project, setProject] = useState(
     {
       name: "",
@@ -21,13 +22,18 @@ const Project = () => {
       live: "",
     } && getData()
   );
+  const navigate = useNavigate();
 
-  useEffect(() => {
+  const handleClick = useCallback(() => {
     localStorage.setItem("project", JSON.stringify(project));
   }, [project]);
-  const navigate = useNavigate();
-  
-  const handleClick = () => {
+
+  const submitingAll = () => {
+    handleClick();
+    handleClickRouting();
+  };
+
+  const handleClickRouting = () => {
     navigate("/Resume");
   };
   const handleSubmit = (e) => {
@@ -77,6 +83,7 @@ const Project = () => {
           fullWidth={true}
           type="url"
           label="Live link"
+          name="live"
         />
       </div>
       <div>
@@ -90,7 +97,7 @@ const Project = () => {
         />
       </div>
       <button
-        onClick={handleClick}
+        onClick={submitingAll}
         type="submit"
         name="live"
         className=" max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 

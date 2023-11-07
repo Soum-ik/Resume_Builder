@@ -96,10 +96,10 @@ const Template1 = () => {
                 <hr />
                 <Projects
                   Name={projectData.name}
-                  dic={projectData.Details}
+                  dic={projectData.details}
                   git={projectData.git}
                   live={projectData.live}
-                  tech={projectData.tech}
+                  tech={projectData.technology}
                 />
                 {/* <Projects
                   Name={"Resume Builder"}

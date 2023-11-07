@@ -31,14 +31,14 @@ const Personal_Info_Formes = () => {
     localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
   }, [personalInfo]);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = useCallback((e) => {
     console.log(personalInfo);
     const { name, value } = e.target;
-    setPersonalInfo({
-      ...personalInfo,
+    setPersonalInfo((prevPersonalInfo) => ({
+      ...prevPersonalInfo,
       [name]: value,
-    });
-  };
+    }));
+  }, []);
 
   // stop auto reload
   const handleSubmit = (e) => {

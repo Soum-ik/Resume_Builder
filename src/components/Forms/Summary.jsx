@@ -1,7 +1,7 @@
 // import { TextareaAutosize as Textarea } from "@mui/material";
 import { useState } from "react";
 import styles from "../../style/Style";
-import { useEffect } from "react";
+import { useCallback } from "react";
 
 // get data from localStorage
 const getData = () => {
@@ -15,16 +15,13 @@ const getData = () => {
 
 const Summary = () => {
   const [summary, setSummary] = useState(getData());
-
-  useEffect(() => {
+  const handleClick = useCallback(() => {
     localStorage.setItem("summary", JSON.stringify(summary));
-
-    return localStorage.setItem("summary", JSON.stringify(summary));
   }, [summary]);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = useCallback((e) => {
     setSummary(e.target.value);
-  };
+  });
   console.log(summary);
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevents the form from reloading
@@ -46,6 +43,7 @@ const Summary = () => {
         />
       </div>
       <button
+        onClick={handleClick}
         type="submit"
         className="max-w-xs focus:max-w-[319px] border py-2 px-3 mt-10 ml-16 rounded-md bg-primary hover:bg-primary/90 text-white"
       >

@@ -1,5 +1,5 @@
 import { TextField } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState, useCallback } from "react";
 
 const work_Expe = () => {
   let work_Expe = localStorage.getItem("work_Expe");
@@ -32,7 +32,7 @@ const Working_Exp = () => {
     });
   };
 
-  useEffect(() => {
+  const handleClick = useCallback(() => {
     localStorage.setItem("work_Expe", JSON.stringify(work_Expe));
   }, [work_Expe]);
 
@@ -102,6 +102,7 @@ const Working_Exp = () => {
       </div>
       {
         <button
+          onClick={handleClick}
           type="submit"
           className=" max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
       "
