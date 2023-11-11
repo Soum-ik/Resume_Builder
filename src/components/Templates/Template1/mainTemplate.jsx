@@ -13,11 +13,14 @@ import { useRef } from "react";
 import ReactToPrint from "react-to-print";
 import Button from "../../Button";
 const MainTemplate1 = () => {
-  const template = useRef(null);
+  const template = useRef(0);
 
   return (
     <>
-      <div ref={template} className={`${styles.paddingX} ${styles.flexCenter} flex-col`}>
+      <div
+        ref={template}
+        className={`${styles.paddingX} ${styles.flexCenter} flex-col`}
+      >
         <div className={`${styles.boxWidth} ${styles.marginY}`}>
           <h1 className={`${styles.heading2}  text-center uppercase`}>
             {personalInfoData.name}

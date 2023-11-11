@@ -5,7 +5,7 @@ import MainTemplate1 from "./mainTemplate";
 const Template1 = () => {
   return (
     <div className={`${styles.paddingX}`}>
-      <Nav />
+      
       <MainTemplate1 />
     </div>
   );

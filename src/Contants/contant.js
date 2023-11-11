@@ -40,7 +40,7 @@ export const Contants = [
 // Motivation first
 export const heading2 = "Every Great Career Begins with a Solid Resume";
 export const Motivations =
-  "Before you ever step foot in a HR recruiter’s office to interview for that dream job, your resume is the first thing that crosses their desk.Because they can’t meet you firsthand to witness your witty personality, focused, driven work ethic, and ability to fit in well with any team, your resume has to do the talking for you.That’s why it’s essential that your resume properly expresses who you are, what you bring to the table, and why they should immediately pick up the phone and get you in the building.With ResumeCat you can be sure that your resume isn’t just being added to the pile; but that it stands out and makes recruiters take notice.";
+  "Your resume is your ticket to landing that dream job, and with Hello Builder, you can be confident that it will speak volumes about your skills, experience, and personality. HR recruiters have numerous resumes to sift through, but with an impressive resume that showcases your unique qualities, you will stand out from the crowd. Your resume needs to convey who you are, what you bring to the table, and why you are the best candidate for the job. With Hello Builder, you can be sure that you are presenting yourself in the best possible way to recruiters, and that they will take notice of your application.";
 
 // last option
 export const heading3 = "Ready to dive in?Create your resume today.";
