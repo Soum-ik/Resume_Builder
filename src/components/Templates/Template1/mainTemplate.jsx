@@ -1,5 +1,4 @@
 import styles from "../../../style/Style";
-import Nav from "../../../Navbar/Navbar";
 import Projects from "./project";
 import Details from "./details";
 import Working from "./working";
@@ -10,13 +9,15 @@ import {
   personalInfoData,
   work_ExpeData,
 } from "./fetchLocalStorageData";
+import { useRef } from "react";
+import ReactToPrint from "react-to-print";
+import Button from "../../Button";
+const MainTemplate1 = () => {
+  const template = useRef(null);
 
-const Template1 = () => {
   return (
-    <div className={`${styles.paddingX}`}>
-      <Nav />
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-        {/* <button>Download</button> */}
+    <>
+      <div ref={template} className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth} ${styles.marginY}`}>
           <h1 className={`${styles.heading2}  text-center uppercase`}>
             {personalInfoData.name}
@@ -24,7 +25,7 @@ const Template1 = () => {
           <h3 className=" text-center text-[35px] font-extralight">
             {work_ExpeData.jobRole}
           </h3>
-          <hr className=" pt-10 h-10" />
+          <hr className=" pt-10 print:pt-2 h-10" />
           <div className=" grid grid-cols-2 gap-10 pt-10">
             {/* left  part*/}
             <div className=" text-right ">
@@ -79,16 +80,16 @@ const Template1 = () => {
                   end={work_ExpeData.endDate}
                 />
                 {/* <Working
-                  Name={"Back-end developer"}
-                  dic={`Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Perferendis non dicta, aliquam corporis recusandae deserunt
-                    quaerat nesciunt reprehenderit voluptatem dolorem odio
-                    repellat earum excepturi expedita totam itaque, explicabo
-                    delectus quam!`}
-                  subName={"Microsoft"}
-                  start={2032}
-                  end={2044}
-                /> */}
+                        Name={"Back-end developer"}
+                        dic={`Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Perferendis non dicta, aliquam corporis recusandae deserunt
+                            quaerat nesciunt reprehenderit voluptatem dolorem odio
+                            repellat earum excepturi expedita totam itaque, explicabo
+                            delectus quam!`}
+                        subName={"Microsoft"}
+                        start={2032}
+                        end={2044}
+                        /> */}
               </div>
 
               <div className=" pt-5 pb-5">
@@ -102,22 +103,31 @@ const Template1 = () => {
                   tech={projectData.technology}
                 />
                 {/* <Projects
-                  Name={"Resume Builder"}
-                  dic={`Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Perferendis non dicta, aliquam corporis recusandae deserunt
-                    quaerat nesciunt reprehenderit voluptatem dolorem odio
-                    repellat earum excepturi expedita totam itaque, explicabo
-                    delectus quam!`}
-                  git={"https:/www.github.com"}
-                  live={"https://live.com"}
-                  tech={"React, Tailwind Css, Fire Base, Metarial ui"}
-                /> */}
+                        Name={"Resume Builder"}
+                        dic={`Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Perferendis non dicta, aliquam corporis recusandae deserunt
+                            quaerat nesciunt reprehenderit voluptatem dolorem odio
+                            repellat earum excepturi expedita totam itaque, explicabo
+                            delectus quam!`}
+                        git={"https:/www.github.com"}
+                        live={"https://live.com"}
+                        tech={"React, Tailwind Css, Fire Base, Metarial ui"}
+                        /> */}
               </div>
             </div>
           </div>
         </div>
+        <ReactToPrint
+          removeAfterPrint={true}
+          content={() => template.current}
+          trigger={() => (
+            <button className=" print:hidden botton p-1 sm:p-2 xxxS:px-4 xxxS:py-3 sm:rounded-lg rounded-md font-semibold text-[17px] list-none">
+              Download
+            </button>
+          )}
+        />
       </div>
-    </div>
+    </>
   );
 };
-export default Template1;
+export default MainTemplate1;

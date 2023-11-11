@@ -12,7 +12,6 @@ const getData = () => {
 };
 
 const Project = () => {
-  
   const [project, setProject] = useState(
     {
       name: "",
