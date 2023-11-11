@@ -17,18 +17,18 @@ const MainTemplate1 = () => {
 
   return (
     <>
-      <div ref={template} className={`${styles.paddingX} ${styles.flexCenter}`}>
+      <div ref={template} className={`${styles.paddingX} ${styles.flexCenter} flex-col`}>
         <div className={`${styles.boxWidth} ${styles.marginY}`}>
           <h1 className={`${styles.heading2}  text-center uppercase`}>
             {personalInfoData.name}
           </h1>
-          <h3 className=" text-center text-[35px] font-extralight">
+          <h3 className=" text-center text-[30px] sm:text-[35px] font-extralight">
             {work_ExpeData.jobRole}
           </h3>
           <hr className=" pt-10 print:pt-2 h-10" />
-          <div className=" grid grid-cols-2 gap-10 pt-10">
+          <div className=" grid grid-cols-1 ss:grid-cols-2 gap-10 pt-10">
             {/* left  part*/}
-            <div className=" text-right ">
+            <div className=" ss:text-right">
               <Details
                 name={"contact"}
                 number={personalInfoData.number}
