@@ -22,6 +22,12 @@ $ npm install # or pnpm install or yarn install
 
 In the project directory, you can run:
 
+### `git clone https://github.com/Soum-ik/Resume_Builder.git`
+
+### `cd Resume_Builder`
+
+### `npm install`
+
 ### `npm run dev`
 
 Runs the app in the development mode.<br>
