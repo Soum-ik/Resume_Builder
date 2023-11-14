@@ -2,6 +2,7 @@
 Here is my Resume Builder application. With this application, you can build your CV in just 3 minutes. It is currently in development mode, but more features will be added soon.
 If you have any UI ideas to share and contribute to the project, please let me know.
 "I need some assistance with certain issues."
+<br>
 
 ![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/10ba7f7f-1932-46d2-bd82-8e783b51910a)
 
@@ -22,13 +23,22 @@ $ npm install # or pnpm install or yarn install
 
 In the project directory, you can run:
 
-### `git clone https://github.com/Soum-ik/Resume_Builder.git`
+```bash
+$ git clone https://github.com/Soum-ik/Resume_Builder.git
+```
 
-### `cd Resume_Builder`
+```bash
+$ cd Resume_Builder
+```
 
-### `npm install`
+```bash
+$ npm install
+```
 
-### `npm run dev`
+```bash
+$ npm run dev
+```
+
 
 Runs the app in the development mode.<br>
 Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
