@@ -2,9 +2,12 @@
 Here is my Resume Builder application. With this application, you can build your CV in just 3 minutes. It is currently in development mode, but more features will be added soon.
 If you have any UI ideas to share and contribute to the project, please let me know.
 "I need some assistance with certain issues."
+<hr>
+![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/10ba7f7f-1932-46d2-bd82-8e783b51910a)
+<hr>
+![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/d77018eb-f12b-4f83-8983-978a5d17c52f)
+<hr>
 
-![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/394e4b05-73ab-4e26-a2de-494cdd01cb44)
-![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/0bdff165-0dc5-4528-80e1-23f8e6fc2b09)
 
 
 ## Usage
