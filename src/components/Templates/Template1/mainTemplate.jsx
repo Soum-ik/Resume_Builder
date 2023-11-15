@@ -11,10 +11,9 @@ import {
 } from "./fetchLocalStorageData";
 import { useRef } from "react";
 import ReactToPrint from "react-to-print";
-import Button from "../../Button";
+
 const MainTemplate1 = () => {
   const template = useRef(0);
-
   return (
     <>
       <div
@@ -42,8 +41,8 @@ const MainTemplate1 = () => {
                 instragram={personalInfoData.instragram}
               />
               <Details
-                start_time={EducationData.start_time}
-                end_time={EducationData.end_time}
+                start_time={EducationData.startdate}
+                end_time={EducationData.enddate}
                 name={"education"}
                 collage={EducationData.collage}
                 degree={EducationData.degree}
@@ -121,10 +120,11 @@ const MainTemplate1 = () => {
           </div>
         </div>
         <ReactToPrint
+          
           removeAfterPrint={true}
           content={() => template.current}
           trigger={() => (
-            <button className=" print:hidden botton p-1 sm:p-2 xxxS:px-4 xxxS:py-3 sm:rounded-lg rounded-md font-semibold text-[17px] list-none">
+            <button className=" print:hidden botton p-1 sm:p-2 xxxS:px-4 xxxS:py-3 mb-5 sm:rounded-lg rounded-md font-semibold text-[17px] list-none">
               Download
             </button>
           )}

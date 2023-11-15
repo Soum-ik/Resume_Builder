@@ -10,6 +10,7 @@ const getData = () => {
   }
 };
 
+
 const Education = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,11 +20,12 @@ const Education = () => {
       collage: "",
       school: "",
       degree: "",
-      // : "",
       startdate: "",
       enddate: "",
     } && getData()
   );
+
+  console.log(education);
 
   const handleClick = useCallback(() => {
     localStorage.setItem("education", JSON.stringify(education));

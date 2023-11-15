@@ -16,7 +16,7 @@ const Template = ({ img }) => {
   }, []); // Add an empty dependency array to ensure the effect runs only once
 
   return loading ? (
-    <Skeleton height={600} placeholder="loading"/>
+    <Skeleton height={600} animation="wave" />
   ) : (
     <div className="relative group">
       {img === "Template_Img" ? (
