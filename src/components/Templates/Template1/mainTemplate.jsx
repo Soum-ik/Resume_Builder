@@ -10,10 +10,13 @@ import {
   work_ExpeData,
 } from "./fetchLocalStorageData";
 import { useRef } from "react";
+
 import ReactToPrint from "react-to-print";
+import { useNavigate } from "react-router-dom";
 
 const MainTemplate1 = () => {
   const template = useRef(0);
+  const navigate = useNavigate();
   return (
     <>
       <div
@@ -120,7 +123,7 @@ const MainTemplate1 = () => {
           </div>
         </div>
         <ReactToPrint
-          
+          onAfterPrint={navigate("/")}
           removeAfterPrint={true}
           content={() => template.current}
           trigger={() => (

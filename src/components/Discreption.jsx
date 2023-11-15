@@ -14,7 +14,7 @@ const Discreption = () => {
         <div className="pt-10">
           <h5 className=" text-primary font-semibold">RESUME MAKER</h5>
           <h2 className="text-[40px] font-bold leading-[3rem] max-w-[500px]">
-            Every Great Career Begins with a{" "}
+          Building the Foundation for a Successful Career Starts with a{" "}
             <span className="text-primary">Solid Resume</span>
           </h2>
           <p className=" py-5 md:py-10 text-dimWhite">{Motivations}</p>
