@@ -1,12 +1,12 @@
 import System from "../components/System";
 import styles from "../style/Style";
 import { Link } from "react-router-dom";
-import { FacebookAuth } from "../auth/Firebase";
+// import { FacebookAuth } from "../auth/Firebase";
 const SingUp = () => {
-  async function FacebookAuthBottonClicked() {
-    const user = await FacebookAuth();
-    console.log("facebook user", user);
-  }
+//   async function FacebookAuthBottonClicked() {
+//     const user = await FacebookAuth();
+//     console.log("facebook user", user);
+//   }
 
   return (
     <div className={`${styles.marginX} `}>
