@@ -1,15 +1,6 @@
 import { TextField } from "@mui/material";
 import { useState, useCallback } from "react";
 
-// const getData = () => {
-//   let personalInfo = localStorage.getItem("education");
-//   if (personalInfo) {
-//     return JSON.parse(localStorage.getItem("education"));
-//   } else {
-//     return [];
-//   }
-// };
-
 const Education = () => {
   const personalInfo = localStorage.getItem("education");
   const parseData = JSON.parse(personalInfo);

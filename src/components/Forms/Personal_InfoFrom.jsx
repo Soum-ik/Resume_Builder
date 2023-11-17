@@ -11,8 +11,6 @@ const getData = () => {
     return [];
   }
 };
-console.log(getData());
-
 const Personal_Info_Formes = () => {
   const [personalInfo, setPersonalInfo] = useState(
     {
