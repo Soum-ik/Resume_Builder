@@ -1,31 +1,30 @@
 import { TextField } from "@mui/material";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 
-const getData = () => {
-  let personalInfo = localStorage.getItem("education");
-  if (personalInfo) {
-    return JSON.parse(localStorage.getItem("education"));
-  } else {
-    return [];
-  }
-};
-
+// const getData = () => {
+//   let personalInfo = localStorage.getItem("education");
+//   if (personalInfo) {
+//     return JSON.parse(localStorage.getItem("education"));
+//   } else {
+//     return [];
+//   }
+// };
 
 const Education = () => {
+  const personalInfo = localStorage.getItem("education");
+  const parseData = JSON.parse(personalInfo);
+  const { collage, school, degree, startdate, enddate } = parseData || {};
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-  const [education, setEducation] = useState(
-    {
-      collage: "",
-      school: "",
-      degree: "",
-      startdate: "",
-      enddate: "",
-    } && getData()
-  );
-
-  console.log(education);
+  const [education, setEducation] = useState({
+    collage: collage,
+    school: school,
+    degree: degree,
+    startdate: startdate,
+    enddate: enddate,
+  });
 
   const handleClick = useCallback(() => {
     localStorage.setItem("education", JSON.stringify(education));
@@ -46,6 +45,7 @@ const Education = () => {
     >
       <div className="">
         <TextField
+          value={education?.collage}
           name="collage"
           fullWidth={true}
           required
@@ -55,6 +55,7 @@ const Education = () => {
       </div>
       <div className="">
         <TextField
+          value={education?.school}
           name="school"
           fullWidth={true}
           label="School name"
@@ -63,6 +64,7 @@ const Education = () => {
       </div>
       <div className="">
         <TextField
+          value={education?.degree}
           name="degree"
           fullWidth={true}
           type="text"
@@ -75,6 +77,7 @@ const Education = () => {
       </div> */}
       <div className="grid grid-cols-2 gap-10">
         <TextField
+          value={education?.startdate}
           type="date"
           fullWidth={false}
           InputLabelProps={{
@@ -85,6 +88,7 @@ const Education = () => {
           onChange={handleInputChange}
         />
         <TextField
+          value={education?.enddate}
           name="enddate"
           type="date"
           InputLabelProps={{
