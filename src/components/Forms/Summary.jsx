@@ -1,32 +1,19 @@
-// import { TextareaAutosize as Textarea } from "@mui/material";
-import { useState } from "react";
 import styles from "../../style/Style";
-import { useCallback } from "react";
-
-// get data from localStorage
-const getData = () => {
-  let summary = localStorage.getItem("summary");
-  if (summary) {
-    return JSON.parse(localStorage.getItem("summary"));
-  } else {
-    return [];
-  }
-};
+import { useCallback, useState } from "react";
 
 const Summary = () => {
-  const [summary, setSummary] = useState(getData());
-  const handleClick = useCallback(() => {
-    localStorage.setItem("summary", JSON.stringify(summary));
-  }, [summary]);
+  const localData = localStorage.getItem("summary");
+  const parseData = JSON.parse(localData);
 
-  const handleInputChange = useCallback((e) => {
-    setSummary(e.target.value);
-  });
-  console.log(summary);
+  const [dics, setDics] = useState(parseData);
+
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents the form from reloading
-    // Handle form submission logic here
+    e.preventDefault();
   };
+
+  const handleClick = useCallback(() => {
+    localStorage.setItem("summary", JSON.stringify(dics));
+  }, [dics]);
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
@@ -35,9 +22,9 @@ const Summary = () => {
       >
         <textarea
           rows={10}
-          value={summary}
-          onChange={(e) => handleInputChange(e)}
           placeholder="Write something about you?"
+          value={dics}
+          onChange={(e) => setDics(() => e.target.value)}
           type="text"
           className="border-dimWhite/70 hover:border-black focus:outline-none focus:ring-2 focus:border-blue-700  text-secondary/75 rounded-lg text-[18px] w-full px-4 py-5 border focus:border-none "
         />

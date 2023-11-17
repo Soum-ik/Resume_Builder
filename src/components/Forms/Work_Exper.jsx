@@ -1,29 +1,21 @@
 import { TextField } from "@mui/material";
 import { useState, useCallback } from "react";
 
-const work_Expe = () => {
-  let work_Expe = localStorage.getItem("work_Expe");
-  if (work_Expe) {
-    return JSON.parse(localStorage.getItem("work_Expe"));
-  } else {
-    return [];
-  }
-};
-
-export const work_ExpeData = work_Expe();
+// export const work_ExpeData = work_Expe();
 
 const Working_Exp = () => {
-  const [work_Expe, setWork_Expe] = useState(
-    {
-      company: "",
-      jobRole: "",
-      jobDetails: "",
-      startDate: "",
-      endDate: "",
-    } && work_ExpeData
-  );
-  // const [loading, setLoading] = useState(false);
-  // console.log(work_Expe);
+  const localData = localStorage.getItem("work_Expe");
+  const parseData = JSON.parse(localData);
+  const { company, jobRole, jobDetails, startDate, endDate } = parseData || {};
+
+  const [work_Expe, setWork_Expe] = useState({
+    company: company,
+    jobRole: jobRole,
+    jobDetails: jobDetails,
+    startDate: startDate,
+    endDate: endDate,
+  });
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setWork_Expe({
@@ -39,6 +31,7 @@ const Working_Exp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
   return (
     <form
       onSubmit={(e) => handleSubmit(e)}
@@ -46,6 +39,7 @@ const Working_Exp = () => {
     >
       <div className="">
         <TextField
+          value={work_Expe.company}
           fullWidth={true}
           name="company"
           required
@@ -55,6 +49,7 @@ const Working_Exp = () => {
       </div>
       <div className="">
         <TextField
+          value={work_Expe.jobRole}
           fullWidth={true}
           name="jobRole"
           required
@@ -64,6 +59,7 @@ const Working_Exp = () => {
       </div>
       <div className="">
         <TextField
+          value={work_Expe.jobDetails}
           fullWidth={true}
           type="text"
           required
@@ -76,6 +72,7 @@ const Working_Exp = () => {
       {/* <dd> */}
       <div className="">
         <TextField
+          value={work_Expe.startDate}
           name="startDate"
           fullWidth={true}
           required
@@ -89,6 +86,7 @@ const Working_Exp = () => {
       </div>
       <div className="">
         <TextField
+          value={work_Expe.endDate}
           name="endDate"
           fullWidth={true}
           required

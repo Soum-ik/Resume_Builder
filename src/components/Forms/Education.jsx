@@ -2,16 +2,15 @@ import { TextField } from "@mui/material";
 import { useState, useCallback } from "react";
 
 const Education = () => {
-  const personalInfo = localStorage.getItem("education");
-  const parseData = JSON.parse(personalInfo);
-  const { collage, school, degree, startdate, enddate } = parseData || {};
+  const localData = localStorage.getItem("education");
+  const parseData = JSON.parse(localData);
+  const { collage, degree, startdate, enddate } = parseData || {};
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
   const [education, setEducation] = useState({
     collage: collage,
-    school: school,
     degree: degree,
     startdate: startdate,
     enddate: enddate,
@@ -41,15 +40,6 @@ const Education = () => {
           fullWidth={true}
           required
           label="Collage name"
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="">
-        <TextField
-          value={education?.school}
-          name="school"
-          fullWidth={true}
-          label="School name"
           onChange={handleInputChange}
         />
       </div>

@@ -1,30 +1,19 @@
 import { TextField } from "@mui/material";
-import { useEffect, useState, useCallback } from "react";
-// import { useState } from "react";
+import { useState, useCallback } from "react";
 
-// fetch from local storage
-const getData = () => {
-  let personalInfo = localStorage.getItem("personalInfo");
-  if (personalInfo) {
-    return JSON.parse(localStorage.getItem("personalInfo"));
-  } else {
-    return [];
-  }
-};
 const Personal_Info_Formes = () => {
-  const [personalInfo, setPersonalInfo] = useState(
-    {
-      name: "",
-      email: "",
-      number: "",
-      github: "",
-      twitter: "",
-      facebook: "",
-      linkdin: "",
-    } && getData()
-  );
+  const localData = localStorage.getItem("personalInfo");
+  const parseData = JSON.parse(localData);
+  const { name, email, number, github, twitter, linkdin } = parseData || {};
 
-  // Save data to localStorage whenever personalInfo changes
+  const [personalInfo, setPersonalInfo] = useState({
+    name: name,
+    email: email,
+    number: number,
+    github: github,
+    twitter: twitter,
+    linkdin: linkdin,
+  });
 
   const handleClick = useCallback(() => {
     localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
@@ -53,6 +42,7 @@ const Personal_Info_Formes = () => {
         <div>
           <TextField
             fullWidth={true}
+            value={personalInfo?.name}
             required
             name="name"
             onChange={handleInputChange}
@@ -62,6 +52,7 @@ const Personal_Info_Formes = () => {
         <div className="">
           <TextField
             fullWidth={true}
+            value={personalInfo?.email}
             required
             name="email"
             onChange={handleInputChange}
@@ -74,6 +65,7 @@ const Personal_Info_Formes = () => {
             name="number"
             fullWidth={true}
             label="Number"
+            value={personalInfo?.number}
             onChange={handleInputChange}
             type="number"
             // value={}
@@ -86,6 +78,7 @@ const Personal_Info_Formes = () => {
         <div className="">
           <TextField
             name="github"
+            value={personalInfo?.github}
             fullWidth={true}
             type="url"
             label="GitHub"
@@ -95,6 +88,7 @@ const Personal_Info_Formes = () => {
         <div className="">
           <TextField
             name="twitter"
+            value={personalInfo?.twitter}
             fullWidth={true}
             label="Twitter"
             onChange={handleInputChange}
@@ -103,15 +97,8 @@ const Personal_Info_Formes = () => {
 
         <div className="">
           <TextField
-            name="facebook"
-            fullWidth={true}
-            label="Facebook"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="">
-          <TextField
             name="linkdin"
+            value={personalInfo?.linkdin}
             fullWidth={true}
             label="Linkdin"
             onChange={handleInputChange}

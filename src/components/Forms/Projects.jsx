@@ -2,25 +2,19 @@ import { TextField } from "@mui/material";
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-const getData = () => {
-  let project = localStorage.getItem("project");
-  if (project) {
-    return JSON.parse(localStorage.getItem("project"));
-  } else {
-    return [];
-  }
-};
-
 const Project = () => {
-  const [project, setProject] = useState(
-    {
-      name: "",
-      details: "",
-      technology: "",
-      git: "",
-      live: "",
-    } && getData()
-  );
+  const localData = localStorage.getItem("project");
+  const parseData = JSON.parse(localData);
+  const { name, details, technology, git, live } = parseData || {};
+
+  const [project, setProject] = useState({
+    name: name,
+    details: details,
+    technology: technology,
+    git: git,
+    live: live,
+  });
+
   const navigate = useNavigate();
 
   const handleClick = useCallback(() => {
@@ -39,7 +33,6 @@ const Project = () => {
     e.preventDefault();
   };
   const handleInputChange = (e) => {
-    // console.log(personalInfo);
     const { name, value } = e.target;
     setProject({
       ...project,
@@ -53,6 +46,7 @@ const Project = () => {
     >
       <div className="">
         <TextField
+          value={project.name}
           fullWidth={true}
           onChange={handleInputChange}
           label="Project Name"
@@ -61,15 +55,16 @@ const Project = () => {
       </div>
       <div className=" md:col-span-2 ">
         <TextField
+          value={project.details}
           name="details"
           fullWidth={true}
-          className=" "
           onChange={handleInputChange}
           label="Project details"
         />
       </div>
       <div>
         <TextField
+          value={project.technology}
           name="technology"
           onChange={handleInputChange}
           fullWidth={true}
@@ -78,6 +73,7 @@ const Project = () => {
       </div>
       <div className=" ">
         <TextField
+          value={project.live}
           onChange={handleInputChange}
           fullWidth={true}
           type="url"
@@ -87,6 +83,7 @@ const Project = () => {
       </div>
       <div>
         <TextField
+          value={project.git}
           name="git"
           className=""
           fullWidth={true}
