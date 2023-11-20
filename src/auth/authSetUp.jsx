@@ -5,7 +5,7 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { createContext, useContext, useState,useCallback } from "react";
+import { createContext, useContext, useState, useCallback } from "react";
 
 const Auth_context = createContext();
 
@@ -20,16 +20,13 @@ export function AuthProvider({ children }) {
 
   const [user, setUser] = useState(null);
 
-  const handleClick = useCallback(() => {
-    localStorage.setItem("user", JSON.stringify(user));
-  }, [user]);
-
   // sing with google
   const googleAuth = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       setUser(user.displayName);
+      await localStorage.setItem("user", JSON.stringify(user));
       console.log(user.displayName, user.email);
     } catch (err) {
       console.log(err);

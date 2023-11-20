@@ -72,7 +72,7 @@ const logIn = () => {
                 </button>
               </div>
             </form> */}
-            <div onClick={googleAuth}>
+            <div className=" flex items-center justify-center" onClick={googleAuth}>
               <System icon={"Google"} name={"Google"} gap={"10"} />
             </div>
             <p className=" text-center pt-5">

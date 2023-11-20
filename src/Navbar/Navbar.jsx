@@ -22,7 +22,7 @@ const Nav = () => {
               <FaUser /> <span> {user}</span>
             </Link>
             <h1 onClick={googleAuthSingOut}>
-              <CiLogout size={25}/>
+              <CiLogout size={25} />
             </h1>
           </>
         ) : (
