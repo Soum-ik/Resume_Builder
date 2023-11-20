@@ -5,7 +5,7 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 
-const System = ({ name, icon }) => {
+const System = ({ name, icon, faceBoookAuth }) => {
   function checker() {
     if (icon === "Facebook") {
       return <AiFillFacebook size={30} />;

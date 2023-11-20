@@ -55,11 +55,15 @@ const MainTemplate1 = () => {
                 <h3 className=" uppercase font-bold">Skills</h3>
                 <hr />
                 <div className="text-[15px] space-y-2 font-normal pt-2">
-                  <p>react</p>
-                  <p>JS</p>
-                  <p>Fire Base</p>
+                  <p>REACT</p>
+                  <p>JAVASCRIPT</p>
+                  <p>FIREBASE</p>
+                  <p>JSON API</p>
+                  <p>TAILWIND CSS</p>
+                  <p></p>
                 </div>
               </div>
+
               <div className=" pt-5 pb-5">
                 <h3 className=" uppercase font-bold">language</h3>
                 <hr />

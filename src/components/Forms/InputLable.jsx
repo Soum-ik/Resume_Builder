@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { TextField, Button } from "@mui/material";
 import { BiPlusMedical } from "react-icons/bi";
 
 const InputLabel = ({ label }) => {
   const [skills, setSkills] = useState([""]);
+  console.log(skills);
 
+  const handleClick = useCallback(() => {
+    localStorage.setItem("inputlab", JSON.stringify(skills));
+  }, [skills]);
 
   const handleAddSkill = () => {
     setSkills([...skills, ""]);
@@ -17,8 +21,7 @@ const InputLabel = ({ label }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents the form from reloading
-    // Handle form submission logic here
+    e.preventDefault();
   };
 
   return (
@@ -48,6 +51,7 @@ const InputLabel = ({ label }) => {
         </Button>
       </div>
       <button
+        onClick={handleClick}
         type="submit"
         className=" text-[21px] focus:m-[1px] focus:max-w-[320px] max-w-xs border py-2 px-3 rounded-md  bg-primary hover:bg-primary/90 text-white 
       "

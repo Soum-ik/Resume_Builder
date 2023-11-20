@@ -4,7 +4,7 @@ const Education = () => {
   if (Education) {
     return JSON.parse(localStorage.getItem("education"));
   } else {
-    return [];
+    return []; 
   }
 };
 export const EducationData = Education();

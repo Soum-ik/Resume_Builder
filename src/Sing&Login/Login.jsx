@@ -1,9 +1,11 @@
 import styles from "../style/Style";
 import { AiFillEye } from "react-icons/ai";
-
 import { Link } from "react-router-dom";
+import { useAuth } from "../auth/authSetUp";
+import System from "../components/System";
 
 const logIn = () => {
+  const { googleAuth } = useAuth();
   return (
     <div className={`${styles.marginX}`}>
       <div className={`${styles.paddingY} ${styles.flexCenter} `}>
@@ -19,8 +21,8 @@ const logIn = () => {
             </h2>
           </div>
 
-          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="POST">
+          <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
+            {/* <form className="space-y-6" action="#" method="POST">
               <div>
                 <label
                   htmlFor="email"
@@ -70,7 +72,10 @@ const logIn = () => {
                   Log in
                 </button>
               </div>
-            </form>
+            </form> */}
+            <div onClick={googleAuth}>
+              <System icon={"Google"} name={"Google"} gap={"10"} />
+            </div>
             <p className=" text-center pt-5">
               <Link to="/singUppage" className="text-secondary my-4">
                 I am not registered —{" "}
