@@ -4,9 +4,19 @@ import Button from "../components/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/authSetUp";
 import { CiLogout } from "react-icons/ci";
+import { useEffect, useState } from "react";
 const Nav = () => {
-  const navitage = useNavigate();
+  // const [displayName, setDisplayName] = useState();
   const { user, googleAuthSingOut } = useAuth();
+
+  // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem("user"));
+  //   const { user} = user;
+  //   setDisplayName(displayName);
+  //   return
+  // }, [user]);
+
+  const navitage = useNavigate();
   return (
     <div className={` flex items-center justify-between w-full drop-shadow-lg`}>
       <Link to={"/"}>
