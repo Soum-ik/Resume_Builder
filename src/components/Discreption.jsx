@@ -1,12 +1,11 @@
 import styles, { layout } from "../style/Style";
-import Resume from "../asset/resume.svg";
+import Resume from "../../public/images/resume.svg";
 import { Motivations } from "../Contants/contant";
-import { useState } from "react";
+  
 import Button from "../components/Button";
 import Footer from "./Footer";
 
-const Discreption = () => {
-  // const [short, setShort] = useState(false);
+const Discreption = () => { 
   return (
     <div className={` ${styles.boxWidth}`}>
       <div className={`${layout.section} gap-10`}>

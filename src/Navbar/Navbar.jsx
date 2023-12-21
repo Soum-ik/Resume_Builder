@@ -1,20 +1,11 @@
 import { FaUser } from "react-icons/fa";
-import Logo from "../asset/logo.png";
+import Logo from "../../public/images/logo.png";
 import Button from "../components/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/authSetUp";
 import { CiLogout } from "react-icons/ci";
-import { useEffect, useState } from "react";
 const Nav = () => {
-  // const [displayName, setDisplayName] = useState();
   const { user, googleAuthSingOut } = useAuth();
-
-  // useEffect(() => {
-  //   const user = JSON.parse(localStorage.getItem("user"));
-  //   const { user} = user;
-  //   setDisplayName(displayName);
-  //   return
-  // }, [user]);
 
   const navitage = useNavigate();
   return (

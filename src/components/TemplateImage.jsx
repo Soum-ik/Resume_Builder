@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Skeleton from "@mui/material/Skeleton";
-import Template_Img from "../asset/resume.jpg";
-import Template_Img2 from "../asset/resume6.webp";
-import Template_Img3 from "../asset/resume5.jpg";
+import Template_Img from "../../public/images/resume.jpg";
+import Template_Img2 from "../../public/images/resume6.webp";
+import Template_Img3 from "../../public/images/resume5.jpg";
 import Button from "./Button";
 
 const Template = ({ img }) => {
