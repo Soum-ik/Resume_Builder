@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { TextField, Button } from "@mui/material";
 import { BiPlusMedical } from "react-icons/bi";
+import toast,{Toaster} from "react-hot-toast";
 
 const InputLabel = ({ label }) => {
   const [skills, setSkills] = useState([""]);
@@ -8,6 +9,7 @@ const InputLabel = ({ label }) => {
 
   const handleClick = useCallback(() => {
     localStorage.setItem("inputlab", JSON.stringify(skills));
+    toast.success("Successfully toast");
   }, [skills]);
 
   const handleAddSkill = () => {
@@ -29,6 +31,7 @@ const InputLabel = ({ label }) => {
       onSubmit={(e) => handleSubmit(e)}
       className="grid grid-cols-1 md:grid-cols-2 gap-10"
     >
+      <Toaster position="top-center" reverseOrder={true} />
       {skills.map((skill, index) => (
         <div key={index}>
           <TextField

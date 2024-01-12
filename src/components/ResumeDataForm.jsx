@@ -35,7 +35,6 @@ export default function TabsWrappedLabel() {
             onChange={handleChange}
             aria-label="lab API tabs example"
             variant="scrollable"
-            
           >
             <Tab
               icon={<BsPersonCircle />}

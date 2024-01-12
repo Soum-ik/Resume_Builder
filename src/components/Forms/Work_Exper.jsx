@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 import { useState, useCallback } from "react";
-
+import toast, { Toaster } from "react-hot-toast";
 // export const work_ExpeData = work_Expe();
 
 const Working_Exp = () => {
@@ -26,6 +26,7 @@ const Working_Exp = () => {
 
   const handleClick = useCallback(() => {
     localStorage.setItem("work_Expe", JSON.stringify(work_Expe));
+    toast.success("Successfully toasted");
   }, [work_Expe]);
 
   const handleSubmit = (e) => {
@@ -37,6 +38,7 @@ const Working_Exp = () => {
       onSubmit={(e) => handleSubmit(e)}
       className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-10"
     >
+      <Toaster position="top-center" reverseOrder={true} />
       <div className="">
         <TextField
           value={work_Expe.company}

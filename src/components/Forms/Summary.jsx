@@ -1,6 +1,6 @@
 import styles from "../../style/Style";
 import { useCallback, useState } from "react";
-
+import toast, { Toaster } from "react-hot-toast";
 const Summary = () => {
   const localData = localStorage.getItem("summary");
   const parseData = JSON.parse(localData);
@@ -13,10 +13,12 @@ const Summary = () => {
 
   const handleClick = useCallback(() => {
     localStorage.setItem("summary", JSON.stringify(dics));
+    toast.success("Success toasted");
   }, [dics]);
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
+      <Toaster position="top-center" reverseOrder={true} />
       <div
         className={`${styles.paddingX} ${styles.flexCenter} sm:min-w-[500px]`}
       >

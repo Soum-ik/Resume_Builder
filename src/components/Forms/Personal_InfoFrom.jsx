@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 import { useState, useCallback } from "react";
-
+import toast, { Toaster } from "react-hot-toast";
 const Personal_Info_Formes = () => {
   const localData = localStorage.getItem("personalInfo");
   const parseData = JSON.parse(localData);
@@ -16,6 +16,7 @@ const Personal_Info_Formes = () => {
   });
 
   const handleClick = useCallback(() => {
+    toast.success("Successfully toasted!");
     localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
   }, [personalInfo]);
 
@@ -113,6 +114,7 @@ const Personal_Info_Formes = () => {
           Submit
         </button>
       </form>
+      <Toaster position="top-center" reverseOrder={true} />
     </>
   );
 };

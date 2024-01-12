@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-
+import toast,{Toaster} from "react-hot-toast";
 const Project = () => {
   const localData = localStorage.getItem("project");
   const parseData = JSON.parse(localData);
@@ -19,6 +19,7 @@ const Project = () => {
 
   const handleClick = useCallback(() => {
     localStorage.setItem("project", JSON.stringify(project));
+    toast.success("Successfuly toasted")
   }, [project]);
 
   const submitingAll = () => {
@@ -43,7 +44,10 @@ const Project = () => {
     <form
       onSubmit={(e) => handleSubmit(e)}
       className="grid grid-cols-1 sm:grid-cols-3 gap-8"
-    >
+    ><Toaster
+    position="top-center"
+    reverseOrder={true}
+  />
       <div className="">
         <TextField
           value={project.name}
