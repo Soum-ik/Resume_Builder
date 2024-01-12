@@ -5,9 +5,15 @@ If you have any UI ideas to share and contribute to the project, please let me k
 <br>
 
 ![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/10ba7f7f-1932-46d2-bd82-8e783b51910a)
+![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/779de66e-03a5-42dd-aa7a-cc7fabd15d09)
 
-![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/d77018eb-f12b-4f83-8983-978a5d17c52f)
+ ![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/919185e1-99c4-4c62-a682-54b72c4ef010)
 
+
+![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/a844f21d-9600-447b-b7c3-9280ee1669ea)
+![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/c45ab9ef-7006-4467-8aa5-d4118f464854)
+**Datas are not filled**
+![image](https://github.com/Soum-ik/Resume_Builder/assets/110479389/9e64c4e4-b100-40cb-8157-6f65b9fb0721)
 
 
 
