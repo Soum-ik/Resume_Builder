@@ -16,9 +16,7 @@ const SingUp = () => {
           <div onClick={googleAuth}>
             <System icon={"Google"} name={"Google"} gap={"10"} />
           </div>
-          <div className=" flex  items-center justify-center">
-            <System icon={"Facebook"} name={"Facebook"} gap={"10"} />
-          </div>
+          
 
           <br />
           <Link to="/logInPage" className=" text-secondary ">
